@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boda Andres & Katherine</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet" />
 
     <style>
         :root {
@@ -15,11 +18,15 @@
             --text-color: #4a3525;
             --accent-color: #b85d19;
             --light-accent: #d4c5b9;
-            --font-title: 'Cormorant Garamond', serif;
-            --font-text: 'Montserrat', sans-serif;
+            --font-title: "Cormorant Garamond", serif;
+            --font-text: "Montserrat", sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: var(--font-text);
@@ -28,7 +35,13 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 600; }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-title);
+            font-weight: 600;
+        }
 
         /* --- Navegación --- */
         nav {
@@ -39,7 +52,7 @@
             padding: 15px 0;
             text-align: center;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         nav a {
@@ -52,7 +65,9 @@
             transition: color 0.3s;
         }
 
-        nav a:hover { color: var(--accent-color); }
+        nav a:hover {
+            color: var(--accent-color);
+        }
 
         /* --- Secciones Generales --- */
         section {
@@ -95,18 +110,18 @@
 
         /* Overlay degradado sobre cada slide */
         .carousel-slide::after {
-            content: '';
+            content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(247, 244, 238, 0.25) 0%,
-                rgba(247, 244, 238, 0.55) 50%,
-                rgba(247, 244, 238, 0.85) 100%
-            );
+            background: linear-gradient(to bottom,
+                    rgba(247, 244, 238, 0.25) 0%,
+                    rgba(247, 244, 238, 0.55) 50%,
+                    rgba(247, 244, 238, 0.85) 100%);
         }
 
-        .carousel-slide.active { opacity: 1; }
+        .carousel-slide.active {
+            opacity: 1;
+        }
 
         /* 
           *** INSTRUCCIONES DE USO ***
@@ -114,10 +129,21 @@
           Puedes usar rutas relativas como: url('img/foto1.jpg')
           o URLs externas. Añade o quita slides según necesites.
         */
-        .slide-1 { background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); }
-        .slide-2 { background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); }
-        .slide-3 { background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); }
-        .slide-4 { background-image: url('https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); }
+        .slide-1 {
+            background-image: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
+        }
+
+        .slide-2 {
+            background-image: url("https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
+        }
+
+        .slide-3 {
+            background-image: url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
+        }
+
+        .slide-4 {
+            background-image: url("https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
+        }
 
         /* Contenido del Hero (sobre el carrusel) */
         .hero-content {
@@ -149,13 +175,21 @@
             color: var(--accent-color);
         }
 
-
-
         /* ================================================
            RESTO DE SECCIONES (sin cambios)
         ================================================ */
-        .section-title { font-size: 2.8rem; margin-bottom: 20px; color: var(--accent-color); }
-        .divider { width: 50px; height: 2px; background-color: var(--accent-color); margin: 0 auto 30px auto; }
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .divider {
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 0 auto 30px auto;
+        }
 
         /* Historia texto */
         .historia-texto {
@@ -164,78 +198,418 @@
             text-align: justify;
             hyphens: auto;
         }
+
         .historia-texto p {
             margin-bottom: 1.4em;
             font-size: 1rem;
             line-height: 1.9;
             color: var(--text-color);
         }
+
         .historia-frase {
             font-family: var(--font-title);
             font-style: italic;
             font-size: 1.7rem !important;
-            font-weight: 700 !important; 
+            font-weight: 700 !important;
             color: var(--accent-color) !important;
             text-align: center !important;
             margin-top: 10px;
             margin-bottom: 0 !important;
         }
 
-        .galeria-pareja { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
-        .galeria-pareja img {
-            width: 100%; max-width: 350px; border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1); object-fit: cover;
-            border: 5px solid #fff; transform: rotate(-2deg); transition: transform 0.3s;
+        .galeria-pareja {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
         }
-        .galeria-pareja img:nth-child(even) { transform: rotate(2deg); }
-        .galeria-pareja img:hover { transform: rotate(0deg) scale(1.02); }
 
-        .programa-container { display: flex; gap: 30px; margin-top: 40px; }
+        .galeria-pareja img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            border: 5px solid #fff;
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+        }
+
+        .galeria-pareja img:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .galeria-pareja img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .programa-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
         .columna-programa {
-            flex: 1; background-color: #fff; padding: 40px 20px;
-            border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            flex: 1;
+            background-color: #fff;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
             border-top: 5px solid var(--light-accent);
         }
-        .icono-animado { font-size: 3.5rem; margin-bottom: 15px; display: inline-block; animation: flotar 3s ease-in-out infinite; }
-        @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        .genero-dresscode { margin: 40px 0; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-        .genero-dresscode h4 { font-size: 1.8rem; margin-bottom: 20px; color: var(--text-color); }
-        .paleta-colores { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
-        .color-item { display: flex; flex-direction: column; align-items: center; }
-        .color-swatch { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 3px solid #fff; }
-        .c-chocolate { background-color: #4a3525; }
-        .c-canela { background-color: #b85d19; }
-        .c-beige { background-color: #e8dcc7; }
-        .c-piedra { background-color: #a8a59e; }
-        .c-terracota { background-color: #cd5c5c; }
-        .c-olivo { background-color: #8f9779; }
-        .c-mostaza { background-color: #d4af37; }
-        .c-arena { background-color: #dcbfa6; }
-        .nombre-color { font-size: 0.8rem; font-weight: 500; text-transform: uppercase; }
+        .icono-animado {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        @keyframes flotar {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .genero-dresscode {
+            margin: 40px 0;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .genero-dresscode h4 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .paleta-colores {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .color-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px solid #fff;
+        }
+
+        .c-chocolate {
+            background-color: #4a3525;
+        }
+
+        .c-canela {
+            background-color: #b85d19;
+        }
+
+        .c-beige {
+            background-color: #e8dcc7;
+        }
+
+        .c-piedra {
+            background-color: #a8a59e;
+        }
+
+        .c-terracota {
+            background-color: #cd5c5c;
+        }
+
+        .c-olivo {
+            background-color: #8f9779;
+        }
+
+        .c-mostaza {
+            background-color: #d4af37;
+        }
+
+        .c-arena {
+            background-color: #dcbfa6;
+        }
+
+        .nombre-color {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
 
         .btn-whatsapp {
-            display: inline-block; background-color: var(--accent-color); color: #fff;
-            padding: 18px 40px; border-radius: 30px; text-decoration: none;
-            font-weight: 500; font-size: 1.1rem; margin-top: 30px;
-            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition:
+                background-color 0.3s,
+                transform 0.3s;
             box-shadow: 0 4px 15px rgba(184, 93, 25, 0.3);
         }
-        .btn-whatsapp:hover { background-color: var(--text-color); transform: translateY(-3px); }
+
+        .btn-whatsapp:hover {
+            background-color: var(--text-color);
+            transform: translateY(-3px);
+        }
+
+        /* ================================================
+           CONTADOR REGRESIVO
+        ================================================ */
+        .countdown-wrapper {
+            position: relative;
+            z-index: 2;
+            margin-top: 28px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(247, 244, 238, 0.82);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(184, 93, 25, 0.25);
+            border-radius: 12px;
+            padding: 14px 20px;
+            min-width: 72px;
+            text-align: center;
+        }
+
+        .countdown-num {
+            font-family: var(--font-title);
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            line-height: 1;
+            display: block;
+        }
+
+        .countdown-label {
+            font-family: var(--font-text);
+            font-size: 0.58rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ================================================
+           REPRODUCTOR DE MÚSICA
+        ================================================ */
+        #music-player {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(247, 244, 238, 0.96);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(184, 93, 25, 0.2);
+            border-radius: 50px;
+            padding: 10px 18px 10px 10px;
+            box-shadow: 0 4px 24px rgba(74, 53, 37, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        #music-player:hover {
+            box-shadow: 0 6px 32px rgba(74, 53, 37, 0.22);
+        }
+
+        .music-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #fff;
+            flex-shrink: 0;
+            transition:
+                background 0.2s,
+                transform 0.15s;
+        }
+
+        .music-btn:hover {
+            background: var(--text-color);
+            transform: scale(1.07);
+        }
+
+        .music-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .music-title {
+            font-family: var(--font-title);
+            font-size: 0.88rem;
+            font-style: italic;
+            color: var(--text-color);
+            white-space: nowrap;
+            max-width: 160px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .music-sub {
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        .music-couple {
+            font-family: var(--font-title);
+            font-style: italic;
+            font-size: .72rem;
+            color: var(--accent-color);
+            letter-spacing: .08em;
+            text-transform: uppercase;}
+        /* barra de progreso */
+        .music-progress-wrap {
+            width: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .music-progress-bar {
+            width: 100%;
+            height: 3px;
+            background: var(--light-accent);
+            border-radius: 2px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .music-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--accent-color);
+            border-radius: 2px;
+            transition: width 0.3s linear;
+            pointer-events: none;
+        }
+
+        .music-time {
+            font-size: 0.58rem;
+            color: #aaa;
+            letter-spacing: 0.05em;
+            text-align: right;
+        }
+
+        /* nota flotante animada */
+        .music-note {
+            position: absolute;
+            top: -6px;
+            left: -4px;
+            font-size: 0.8rem;
+            animation: noteFloat 2.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes noteFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-10deg);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(10deg);
+                opacity: 1;
+            }
+        }
+
+        .music-note.paused {
+            animation: none;
+            opacity: 0.4;
+        }
 
         @media (max-width: 768px) {
-            #inicio h1 { font-size: 3rem; }
-            #inicio h2 { font-size: 1.1rem; letter-spacing: 2px; }
-            nav { padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; }
-            nav a { margin: 5px 10px; }
-            .programa-container { flex-direction: column; gap: 20px; }
-            .galeria-pareja img { max-width: 100%; }
-            .carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
+            #inicio h1 {
+                font-size: 3rem;
+            }
+
+            #inicio h2 {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+
+            nav {
+                padding: 10px 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+
+            .programa-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .galeria-pareja img {
+                max-width: 100%;
+            }
+
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+
+            #music-player {
+                bottom: 14px;
+                right: 14px;
+                padding: 8px 14px 8px 8px;
+            }
+
+            .music-progress-wrap {
+                display: none;
+            }
+
+            .music-title {
+                max-width: 120px;
+            }
         }
     </style>
 </head>
-<body>
 
+<body>
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#historia">Nuestra Historia</a>
@@ -248,7 +622,6 @@
          SECCIÓN INICIO CON CARRUSEL
     ================================================ -->
     <section id="inicio">
-
         <!-- Fondo: slides del carrusel -->
         <div class="carousel-track">
             <div class="carousel-slide slide-1 active"></div>
@@ -259,12 +632,33 @@
 
         <!-- Texto encima del carrusel -->
         <div class="hero-content">
-            <h2>¡NOS CASAMOS!</h2>
+            <h2 style="font-size: 3rem; font-weight: 700; letter-spacing: 4px;">¡NOS CASAMOS!</h2>
             <h1>Andres & Katherine</h1>
             <div class="divider"></div>
-            <p class="fecha-lugar">7 de Agosto de 2026<br>Santa Marta, Colombia</p>
-        </div>
+            <p class="fecha-lugar">
+                7 de Agosto de 2026<br />Santa Marta, Colombia
+            </p>
 
+            <!-- CONTADOR REGRESIVO -->
+            <div class="countdown-wrapper">
+                <div class="countdown-item">
+                    <span class="countdown-num" id="cd-d">--</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-num" id="cd-h">--</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-num" id="cd-m">--</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-num" id="cd-s">--</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Nuestra Historia -->
@@ -272,16 +666,29 @@
         <h2 class="section-title">Nuestra Historia</h2>
         <div class="divider"></div>
         <div class="historia-texto">
-            <p>Somos dos ingenieros que, como si la vida hubiera alineado cada dato a nuestro favor, encontramos una conexión profunda, hecha de los mismos valores, de las mismas ilusiones y de un amor que ha crecido con cada paso. Así, casi sin darnos cuenta, comenzamos a construir no solo una relación, sino un hogar… una familia.</p>
-            <p>Hoy queremos invitarlos a ser parte de este momento tan especial: el inicio de nuestra vida juntos. Frente al mar, donde sellaremos nuestra promesa.</p>
-            <p class="historia-frase">Tú y yo, un futuro, un solo destino… para siempre.</p>
+            <p>
+                Somos dos ingenieros que, como si la vida hubiera alineado cada dato a
+                nuestro favor, encontramos una conexión profunda, hecha de los mismos
+                valores, de las mismas ilusiones y de un amor que ha crecido con cada
+                paso. Así, casi sin darnos cuenta, comenzamos a construir no solo una
+                relación, sino un hogar… una familia.
+            </p>
+            <p>
+                Hoy queremos invitarlos a ser parte de este momento tan especial: el
+                inicio de nuestra vida juntos. Frente al mar, donde sellaremos nuestra
+                promesa.
+            </p>
+            <p class="historia-frase">
+                Tú y yo, un futuro, un solo destino… para siempre.
+            </p>
         </div>
         <div class="galeria-pareja">
-            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Foto Katherine y Andrés 1">
-            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Foto Katherine y Andrés 2">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Foto Katherine y Andrés 1" />
+            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Foto Katherine y Andrés 2" />
         </div>
     </section>
-
 
     <!-- Programa -->
     <section id="programa">
@@ -289,20 +696,31 @@
         <div class="divider"></div>
         <div class="programa-container">
             <div class="columna-programa">
-                <span class="icono-animado">🍸🥂</span>
+                <span class="icono-animado">♨️🥂</span>
                 <h3>Jueves, 6 de Agosto</h3>
-                <h4 style="color: var(--accent-color); margin-bottom: 15px;">Pre-Boda</h4>
+                <h4 style="color: var(--accent-color); margin-bottom: 15px">
+                    Pre-Boda
+                </h4>
                 <p><strong>18:00 hrs</strong></p>
                 <p>Cóctel rompehielos de bienvenida para ir calentando motores.</p>
-                <p style="margin-top: 10px;"><em>Lugar: [Nombre de la playa o bar]</em></p>
+                <p style="margin-top: 10px">
+                    <em>Lugar: [Nombre de la playa o bar]</em>
+                </p>
             </div>
             <div class="columna-programa">
-                <span class="icono-animado">💍</span>
+                <span class="icono-animado">👰🏻‍♀️💍🤵🏻</span>
                 <h3>Viernes, 7 de Agosto</h3>
-                <h4 style="color: var(--accent-color); margin-bottom: 15px;">El Gran Día</h4>
+                <h4 style="color: var(--accent-color); margin-bottom: 15px">
+                    El Gran Día
+                </h4>
                 <p><strong>16:00 hrs:</strong> Ceremonia frente al mar.</p>
-                <p><strong>17:30 hrs:</strong> Recepción, cena y fiesta bajo las estrellas.</p>
-                <p style="margin-top: 10px;"><em>Lugar: [Nombre de la locación en Santa Marta]</em></p>
+                <p>
+                    <strong>17:30 hrs:</strong> Recepción, cena y fiesta bajo las
+                    estrellas.
+                </p>
+                <p style="margin-top: 10px">
+                    <em>Lugar: [Nombre de la locación en Santa Marta]</em>
+                </p>
             </div>
         </div>
     </section>
@@ -312,26 +730,62 @@
         <h2 class="section-title">Dress Code</h2>
         <div class="divider"></div>
         <p><strong>Estilo: Boho Beach / Formal de Playa</strong></p>
-        <p>Queremos que todos se sientan cómodos y frescos. Les sugerimos esta paleta de colores para mantener la armonía visual con el entorno caribeño y nuestra celebración.</p>
-        <p style="font-size: 0.9rem; margin-top: 10px;"><em>*Por favor, reservar el color blanco exclusivamente para la novia.</em></p>
+        <p>
+            Queremos que todos se sientan cómodos y frescos. Les sugerimos esta
+            paleta de colores para mantener la armonía visual con el entorno
+            caribeño y nuestra celebración.
+        </p>
+        <p style="font-size: 0.9rem; margin-top: 10px">
+            <em>*Por favor, reservar el color blanco exclusivamente para la
+                novia.</em>
+        </p>
         <div class="genero-dresscode">
             <h4>Mujeres</h4>
-            <p style="margin-bottom: 20px;">Vestidos fluidos, telas ligeras. Sugerimos tonos cálidos y tierra:</p>
+            <p style="margin-bottom: 20px">
+                Vestidos fluidos, telas ligeras. Sugerimos tonos cálidos y tierra:
+            </p>
             <div class="paleta-colores">
-                <div class="color-item"><div class="color-swatch c-terracota"></div><span class="nombre-color">Terracota</span></div>
-                <div class="color-item"><div class="color-swatch c-mostaza"></div><span class="nombre-color">Mostaza</span></div>
-                <div class="color-item"><div class="color-swatch c-olivo"></div><span class="nombre-color">V. Olivo</span></div>
-                <div class="color-item"><div class="color-swatch c-arena"></div><span class="nombre-color">Arena</span></div>
+                <div class="color-item">
+                    <div class="color-swatch c-terracota"></div>
+                    <span class="nombre-color">Terracota</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch c-mostaza"></div>
+                    <span class="nombre-color">Mostaza</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch c-olivo"></div>
+                    <span class="nombre-color">V. Olivo</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch c-arena"></div>
+                    <span class="nombre-color">Arena</span>
+                </div>
             </div>
         </div>
         <div class="genero-dresscode">
             <h4>Hombres</h4>
-            <p style="margin-bottom: 20px;">Trajes de lino o algodón para acompañar el traje tono piedra del novio. Sugerimos:</p>
+            <p style="margin-bottom: 20px">
+                Trajes de lino o algodón para acompañar el traje tono piedra del
+                novio. Sugerimos:
+            </p>
             <div class="paleta-colores">
-                <div class="color-item"><div class="color-swatch c-chocolate"></div><span class="nombre-color">Chocolate</span></div>
-                <div class="color-item"><div class="color-swatch c-canela"></div><span class="nombre-color">Canela</span></div>
-                <div class="color-item"><div class="color-swatch c-beige"></div><span class="nombre-color">Beige</span></div>
-                <div class="color-item"><div class="color-swatch c-piedra"></div><span class="nombre-color">Piedra</span></div>
+                <div class="color-item">
+                    <div class="color-swatch c-chocolate"></div>
+                    <span class="nombre-color">Chocolate</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch c-canela"></div>
+                    <span class="nombre-color">Canela</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch c-beige"></div>
+                    <span class="nombre-color">Beige</span>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch c-piedra"></div>
+                    <span class="nombre-color">Piedra</span>
+                </div>
             </div>
         </div>
     </section>
@@ -340,28 +794,166 @@
     <section id="rsvp">
         <h2 class="section-title">Confirma tu Asistencia</h2>
         <div class="divider"></div>
-        <p>Las invitaciones oficiales estarán llegando pronto, pero por ahora tu presencia es nuestro mejor regalo. Por favor, ayúdanos a planear mejor confirmando tu asistencia.</p>
-        <a href="https://wa.me/573222176492?text=¡Hola!%20Qué%20emoción,%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Katherine%20y%20Andrés.%20Mi%20nombre%20es:%20" class="btn-whatsapp" target="_blank">
+        <p>
+            Las invitaciones oficiales estarán llegando pronto, pero por ahora tu
+            presencia es nuestro mejor regalo. Por favor, ayúdanos a planear mejor
+            confirmando tu asistencia.
+        </p>
+        <a href="https://wa.me/573222176492?text=¡Hola!%20Qué%20emoción,%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Katherine%20y%20Andrés.%20Mi%20nombre%20es:%20"
+            class="btn-whatsapp" target="_blank">
             Confirmar por WhatsApp
         </a>
     </section>
 
     <!-- ================================================
-         JAVASCRIPT DEL CARRUSEL
+         REPRODUCTOR DE MÚSICA FLOTANTE
+         ✏️ Cambia el src del audio por tu canción:
+            - Sube el mp3 a tu carpeta: src="img/cancion.mp3"
+            - O usa un enlace directo a un mp3
+    ================================================ -->
+    <div id="music-player">
+        <span class="music-note" id="music-note">🎵</span>
+        <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Reproducir / Pausar">
+            ▶
+        </button>
+        <div class="music-info">
+            <!-- ✏️ Cambia el nombre de tu canción -->
+            <span class="music-title" id="music-title">Esta Noche</span>
+            <span class="music-sub">Mike Bahía ft. Greeicy</span>
+            <span class="music-couple">Andres &amp; Katherine</span>
+        </div>
+        <div class="music-progress-wrap">
+            <div class="music-progress-bar" id="progress-bar" onclick="seekMusic(event)">
+                <div class="music-progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="music-time" id="music-time">0:00</span>
+        </div>
+    </div>
+
+    <!-- ✏️ CAMBIA src POR TU ARCHIVO DE MÚSICA -->
+    <audio id="bg-audio" loop>
+        <source src="img/Mike Bahía ft. Greeicy - Esta Noche (Letra).mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- ================================================
+         JAVASCRIPT
     ================================================ -->
     <script>
-        const slides = document.querySelectorAll('.carousel-slide');
+        /* ── CARRUSEL ── */
+        const slides = document.querySelectorAll(".carousel-slide");
         let current = 0;
         const INTERVAL = 5000;
-
         function next() {
-            slides[current].classList.remove('active');
+            slides[current].classList.remove("active");
             current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
+            slides[current].classList.add("active");
+        }
+        setInterval(next, INTERVAL);
+
+        /* ── CUENTA REGRESIVA ──
+             ✏️ Cambia la fecha si cambia el día */
+        const weddingDate = new Date("2026-08-07T16:00:00");
+        function updateCountdown() {
+            const now = new Date();
+            const diff = weddingDate - now;
+            if (diff <= 0) {
+                ["cd-d", "cd-h", "cd-m", "cd-s"].forEach(
+                    (id) => (document.getElementById(id).textContent = "00"),
+                );
+                return;
+            }
+            const pad = (n) => String(Math.floor(n)).padStart(2, "0");
+            document.getElementById("cd-d").textContent = pad(diff / 86400000);
+            document.getElementById("cd-h").textContent = pad(
+                (diff % 86400000) / 3600000,
+            );
+            document.getElementById("cd-m").textContent = pad(
+                (diff % 3600000) / 60000,
+            );
+            document.getElementById("cd-s").textContent = pad(
+                (diff % 60000) / 1000,
+            );
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        /* ── REPRODUCTOR ── */
+        const audio = document.getElementById("bg-audio");
+        const btn = document.getElementById("music-btn");
+        const note = document.getElementById("music-note");
+        const fill = document.getElementById("progress-fill");
+        const timeLabel = document.getElementById("music-time");
+        const titleEl = document.getElementById("music-title");
+        let playing = false;
+
+        const unlockAudio = () => {
+            if (!playing) {
+                audio
+                    .play()
+                    .then(() => {
+                        playing = true;
+                        btn.textContent = "⏸";
+                        note.classList.remove("paused");
+                    })
+                    .catch(() => { });
+            }
+            document.removeEventListener("click", unlockAudio);
+            document.removeEventListener("touchstart", unlockAudio);
+        };
+        document.addEventListener("click", unlockAudio);
+        document.addEventListener("touchstart", unlockAudio);
+
+        /* Intenta autoplay al cargar */
+        window.addEventListener("load", () => {
+            audio.volume = 0.5;
+            audio
+                .play()
+                .then(() => {
+                    playing = true;
+                    btn.textContent = "⏸";
+                    note.classList.remove("paused");
+                })
+                .catch(() => {
+                    btn.textContent = "▶";
+                    note.classList.add("paused");
+                });
+        });
+
+        function toggleMusic() {
+            if (playing) {
+                audio.pause();
+                btn.textContent = "▶";
+                note.classList.add("paused");
+            } else {
+                audio.play();
+                btn.textContent = "⏸";
+                note.classList.remove("paused");
+            }
+            playing = !playing;
         }
 
-        setInterval(next, INTERVAL);
-    </script>
+        /* Barra de progreso */
+        audio.addEventListener("timeupdate", () => {
+            if (!audio.duration) return;
+            const pct = (audio.currentTime / audio.duration) * 100;
+            fill.style.width = pct + "%";
+            const m = Math.floor(audio.currentTime / 60);
+            const s = Math.floor(audio.currentTime % 60)
+                .toString()
+                .padStart(2, "0");
+            timeLabel.textContent = m + ":" + s;
+        });
 
+        /* Clic en la barra para adelantar */
+        function seekMusic(e) {
+            const bar = document.getElementById("progress-bar");
+            const rect = bar.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pct * audio.duration;
+        }
+
+
+    </script>
 </body>
+
 </html>
