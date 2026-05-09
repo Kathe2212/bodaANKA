@@ -225,13 +225,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-shadow:
+                0 0 6px rgba(255,255,255,0.95),
+                0 0 14px rgba(255,255,255,0.75),
+                0 0 24px rgba(255,255,255,0.45);
         }
 
-        #inicio h1 { font-size: 4.5rem; margin-bottom: 10px; color: var(--text-color); }
+        #inicio h1 { font-size: 6rem; margin-bottom: 10px; color: var(--text-color); }
         #inicio h2 { font-size: 1.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 20px; }
 
         .fecha-lugar {
-            font-size: 1.1rem;
+            font-size: 1.45rem;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -448,7 +452,6 @@
         <div class="carousel-track">
             <div class="carousel-slide slide-1 active"></div>
             <div class="carousel-slide slide-2"></div>
-            <div class="carousel-slide slide-3"></div>
             <div class="carousel-slide slide-4"></div>
             <div class="carousel-slide slide-5"></div>
             <div class="carousel-slide slide-6"></div>
@@ -463,12 +466,10 @@
             <div class="carousel-slide slide-15"></div>
             <div class="carousel-slide slide-16"></div>
             <div class="carousel-slide slide-17"></div>
-            <div class="carousel-slide slide-18"></div>
             <div class="carousel-slide slide-19"></div>
             <div class="carousel-slide slide-20"></div>
             <div class="carousel-slide slide-21"></div>
             <div class="carousel-slide slide-22"></div>
-            <div class="carousel-slide slide-23"></div>
         </div>
 
         <!-- Hint: desaparece al primer clic -->
@@ -481,7 +482,7 @@
         </div>
 
         <div class="hero-content">
-            <h2 style="font-size:3rem;font-weight:700;letter-spacing:4px;">¡NOS CASAMOS!</h2>
+            <h2 style="font-size: 3.8rem; font-weight: 700; letter-spacing: 4px;">¡NOS CASAMOS!</h2>
             <h1>Andres & Katherine</h1>
             <div class="divider"></div>
             <p class="fecha-lugar">7 de Agosto de 2026<br/>Santa Marta, Colombia</p>
@@ -511,24 +512,113 @@
 
     <!-- PROGRAMA -->
     <section id="programa">
-        <h2 class="section-title">El Programa</h2>
+        <h2 class="section-title">Programa</h2>
         <div class="divider"></div>
+        <!-- Mensaje central Programa -->
+        <p style="
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--accent-color);
+            text-align: center;
+            line-height: 1.85;
+            max-width: 520px;
+            margin: 0 auto 2rem;
+            letter-spacing: 0.3px;
+        ">
+            "Cada silla ocupada será un corazón que nos acompaña.<br>
+            Su presencia hará de este día un recuerdo eterno."
+        </p>
+
         <div class="programa-container">
             <div class="columna-programa">
-                <span class="icono-animado">♨️🥂</span>
-                <h3>Jueves, 6 de Agosto</h3>
-                <h4 style="color:var(--accent-color);margin-bottom:15px;">Pre-Boda</h4>
-                <p><strong>18:00 hrs</strong></p>
-                <p>Cóctel rompehielos de bienvenida para ir calentando motores.</p>
-                <p style="margin-top:10px;"><em>Lugar: [Nombre de la playa o bar]</em></p>
+                <span class="icono-animado">♨️🍹</span>
+                <h3 style="font-size: 1.6rem;">Jueves, 6 de Agosto</h3>
+                <h2 style="font-family: var(--font-title); font-size: 2.4rem; color: var(--accent-color); margin-bottom: 8px; font-weight: 700; letter-spacing: 1px;">
+                    Pre-Boda
+                </h2>
+
+                <!-- Banner Noche Blanca -->
+                <div style="
+                    background: linear-gradient(135deg, #fff8f0 0%, #ffffff 60%, #fdf3e7 100%);
+                    border: 1.5px solid var(--light-accent);
+                    border-radius: 12px;
+                    padding: 12px 16px;
+                    margin: 10px 0 18px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                ">
+                    <span style="font-size: 1.5rem; flex-shrink:0;">🤍</span>
+                    <div style="text-align:left;">
+                        <p style="font-family: var(--font-title); font-size: 1.05rem; font-weight: 700; color: var(--text-color); margin: 0 0 6px; letter-spacing: 0.5px;">Noche Blanca</p>
+                        <p style="font-size: 0.72rem; color: var(--accent-color); margin: 0 0 8px; font-style: italic; font-weight: 600; line-height: 1.7;">Los invitamos a vestir únicamente de blanco y elegir un calzado cómodo para disfrutar la playa.</p>
+                        <p style="font-size: 0.72rem; color: var(--accent-color); margin: 0; line-height: 1.8;">M: Vestidos, conjuntos o looks frescos en blanco.<br>H: Camisa blanca con pantalón o bermuda blanca.</p>
+                    </div>
+                </div>
+
+                <p><strong>19:00 hrs</strong></p>
+                <p>Antes de nuestro gran día, queremos compartir con ustedes una noche mágica junto al mar ✨<br><br>Nos reuniremos alrededor de una fogata y una chicharronada frente a la playa de Santa Marta para celebrar el amor, la amistad y este nuevo comienzo.</p>
+               <p style="margin-top: 20px">
+                    <em style="font-weight: 600;">Hotel Santorini Kima Beach Resort</em>
+                </p>
+                <a href="https://www.google.com/maps/place/Hotel+Santorini+Kima+Beach+Resort/@11.0766873,-74.2172431,17z/data=!3m1!4b1!4m9!3m8!1s0x8ef4f874fcdbc19d:0xee5f0cf0794c9b19!5m2!4m1!1i2!8m2!3d11.076682!4d-74.2146682!16s%2Fg%2F1tdgwg0l?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="display: inline-block; margin-top: 12px; padding: 10px 22px; background-color: var(--accent-color); color: #fff; border-radius: 25px; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; font-family: var(--font-text);">📍 Ver en Google Maps</a>
             </div>
             <div class="columna-programa">
                 <span class="icono-animado">👰🏻‍♀️💍🤵🏻</span>
-                <h3>Viernes, 7 de Agosto</h3>
-                <h4 style="color:var(--accent-color);margin-bottom:15px;">El Gran Día</h4>
-                <p><strong>16:00 hrs:</strong> Ceremonia frente al mar.</p>
-                <p><strong>17:30 hrs:</strong> Recepción, cena y fiesta bajo las estrellas.</p>
-                <p style="margin-top:10px;"><em>Lugar: [Nombre de la locación en Santa Marta]</em></p>
+                <h3 style="font-size: 1.6rem;">Viernes, 7 de Agosto</h3>
+                <h2 style="font-family: var(--font-title); font-size: 2.4rem; color: var(--accent-color); margin-bottom: 8px; font-weight: 700; letter-spacing: 1px;">
+                    El Gran Día
+                </h2>
+
+                <!-- Banner Dress Code -->
+                <div style="
+                    background: linear-gradient(135deg, #fff8f0 0%, #ffffff 60%, #fdf3e7 100%);
+                    border: 1.5px solid var(--light-accent);
+                    border-radius: 12px;
+                    padding: 12px 16px;
+                    margin: 10px 0 18px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                ">
+                    <span style="font-size: 1.5rem; flex-shrink:0;">🤎</span>
+                    <div style="text-align:left;">
+                        <p style="font-family: var(--font-title); font-size: 1.05rem; font-weight: 700; color: var(--text-color); margin: 0 0 4px; letter-spacing: 0.5px;">Dress Code</p>
+                        <p style="font-size: 0.72rem; color: var(--accent-color); margin: 0 0 8px; font-style: italic; font-weight: 600; line-height: 1.7;">Estilo Boho Beach — tonos cálidos y tierra para armonizar con el entorno caribeño.</p>
+                        <a href="#dress-code" style="display:inline-block; font-size: 0.72rem; color: #fff; background: var(--accent-color); padding: 4px 14px; border-radius: 20px; text-decoration: none; font-family: var(--font-text); letter-spacing: 0.5px;">Ver Dress Code →</a>
+                    </div>
+                </div>
+
+                <p><strong>16:30 hrs:</strong> Ceremonia Civil frente al mar.</p>
+                <p>
+                    <strong>17:30 hrs:</strong> Recepción y cena bajo las
+                    estrellas.
+                </p>
+
+                <!-- Lluvia de Sobres -->
+                <div style="
+                    margin: 12px 0;
+                    padding: 10px 0;
+                    background: linear-gradient(135deg, #fffaf5 0%, #fff8f0 100%);
+                    border: 1.5px solid var(--light-accent);
+                    border-radius: 12px;
+                    text-align: center;
+                ">
+                    <span style="font-size: 1.2rem; display:block; margin-bottom: 4px;">💌</span>
+                    <p style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 700; color: var(--text-color); margin: 0 0 4px; letter-spacing: 0.5px;">Lluvia de Sobres</p>
+                    <p style="font-family: var(--font-title); font-size: 1rem; font-style: italic; color: var(--text-color); line-height: 1.75; margin: 0;">
+                        "No necesitamos más que su amor y compañía.<br>
+                        Sin embargo, si desean hacernos un obsequio,<br>
+                        una lluvia de sobres será recibida con mucha gratitud."
+                    </p>
+                    <p style="font-size: 0.63rem; color: var(--accent-color); margin-top: 6px; letter-spacing: 0.5px; font-weight: 600;">— Andres &amp; Katherine 🤍</p>
+                </div>
+
+                <p style="margin-top: 4px">
+                    <em style="font-weight: 600;">Hotel Santorini Kima Beach Resort</em>
+                </p>
+                <a href="https://www.google.com/maps/place/Hotel+Santorini+Kima+Beach+Resort/@11.0766873,-74.2172431,17z/data=!3m1!4b1!4m9!3m8!1s0x8ef4f874fcdbc19d:0xee5f0cf0794c9b19!5m2!4m1!1i2!8m2!3d11.076682!4d-74.2146682!16s%2Fg%2F1tdgwg0l?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="display: inline-block; margin-top: 12px; padding: 10px 22px; background-color: var(--accent-color); color: #fff; border-radius: 25px; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; font-family: var(--font-text);">📍 Ver en Google Maps</a>
             </div>
         </div>
     </section>
