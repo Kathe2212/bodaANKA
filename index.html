@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,10 +7,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
-        rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #f7f4ee;
@@ -22,11 +19,7 @@
             --font-text: "Montserrat", sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: var(--font-text);
@@ -35,13 +28,7 @@
             line-height: 1.6;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: var(--font-title);
-            font-weight: 600;
-        }
+        h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 600; }
 
         nav {
             position: fixed;
@@ -51,7 +38,7 @@
             padding: 15px 0;
             text-align: center;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav a {
@@ -64,9 +51,7 @@
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--accent-color);
-        }
+        nav a:hover { color: var(--accent-color); }
 
         section {
             padding: 80px 20px;
@@ -75,7 +60,7 @@
             text-align: center;
         }
 
-        /* CARRUSEL */
+        /* ── CARRUSEL ── */
         #inicio {
             position: relative;
             height: 100vh;
@@ -136,9 +121,7 @@
             pointer-events: none;
         }
 
-        .carousel-slide.active {
-            opacity: 1;
-        }
+        .carousel-slide.active { opacity: 1; }
 
         /* Hint visual — invita al usuario a interactuar */
         .touch-hint {
@@ -236,8 +219,6 @@
         .slide-21 { background-image: url('img/foto23.jpeg'); }
         .slide-22 { background-image: url('img/Beso.png'); }
 
-
-        /* Contenido del Hero (sobre el carrusel) */
         .hero-content {
             position: relative;
             z-index: 2;
@@ -257,37 +238,13 @@
             color: var(--accent-color);
         }
 
-        /* ================================================
-           RESTO DE SECCIONES (sin cambios)
-        ================================================ */
-        .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
+        /* ── GENERALES ── */
+        .section-title { font-size: 2.8rem; margin-bottom: 20px; color: var(--accent-color); }
+        .divider { width: 50px; height: 2px; background-color: var(--accent-color); margin: 0 auto 30px auto; }
 
-        .divider {
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent-color);
-            margin: 0 auto 30px auto;
-        }
-
-        /* Historia texto */
-        .historia-texto {
-            max-width: max-content;
-            margin: 0 auto;
-            text-align: justify;
-            hyphens: auto;
-        }
-
-        .historia-texto p {
-            margin-bottom: 1.4em;
-            font-size: 1rem;
-            line-height: 1.9;
-            color: var(--text-color);
-        }
-
+        /* ── HISTORIA ── */
+        .historia-texto { max-width: 680px; margin: 0 auto; text-align: justify; hyphens: auto; }
+        .historia-texto p { margin-bottom: 1.4em; font-size: 1rem; line-height: 1.9; color: var(--text-color); }
         .historia-frase {
             font-family: var(--font-title);
             font-style: italic;
@@ -299,403 +256,185 @@
             margin-bottom: 0 !important;
         }
 
-        .galeria-pareja {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
-
+        .galeria-pareja { display: flex; justify-content: center; gap: 24px; margin-top: 40px; flex-wrap: wrap; align-items: flex-start; }
         .galeria-pareja img {
-            width: 100%;
-            max-width: 340px;
-            height: 350px;            /* altura automática = foto completa */
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            object-fit: contain;     /* nunca recorta */
-            background-color: #ede8e0;
-            border: 5px solid #fff;
-            transform: rotate(-2deg);
-            transition: transform 0.3s;
+            width: 100%; max-width: 340px; height: auto;
+            border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            object-fit: contain; background-color: #ede8e0;
+            border: 5px solid #fff; transform: rotate(-2deg); transition: transform 0.3s;
         }
+        .galeria-pareja img:nth-child(even) { transform: rotate(2deg); }
+        .galeria-pareja img:hover { transform: rotate(0deg) scale(1.02); }
 
-        .galeria-pareja img:nth-child(even) {
-            transform: rotate(2deg);
-        }
-
-        .galeria-pareja img:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-
-        .programa-container {
-            display: flex;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
+        /* ── PROGRAMA ── */
+        .programa-container { display: flex; gap: 30px; margin-top: 40px; }
         .columna-programa {
-            flex: 1;
-            background-color: #fff;
-            padding: 40px 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+            flex: 1; background-color: #fff; padding: 40px 20px;
+            border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.04);
             border-top: 5px solid var(--light-accent);
         }
+        .icono-animado { font-size: 3.5rem; margin-bottom: 15px; display: inline-block; animation: flotar 3s ease-in-out infinite; }
+        @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        .icono-animado {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            display: inline-block;
-            animation: flotar 3s ease-in-out infinite;
-        }
-
-        @keyframes flotar {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .genero-dresscode {
-            margin: 40px 0;
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-        }
-
-        .genero-dresscode h4 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--text-color);
-        }
-
-        .paleta-colores {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .color-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .color-swatch {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 3px solid #fff;
-        }
-
-        .c-chocolate {
-            background-color: #4a3525;
-        }
-
-        .c-canela {
-            background-color: #b85d19;
-        }
-
-        .c-beige {
-            background-color: #e8dcc7;
-        }
-
-        .c-piedra {
-            background-color: #a8a59e;
-        }
-
-        .c-terracota {
-            background-color: #cd5c5c;
-        }
-
-        .c-olivo {
-            background-color: #8f9779;
-        }
-
-        .c-mostaza {
-            background-color: #d4af37;
-        }
-
-        .c-arena {
-            background-color: #dcbfa6;
-        }
-
-        .nombre-color {
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        /* WhatsApp */
+        /* ── WHATSAPP ── */
         .btn-whatsapp {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 18px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            margin-top: 30px;
-            transition:
-                background-color 0.3s,
-                transform 0.3s;
-            box-shadow: 0 4px 15px rgba(184, 93, 25, 0.3);
+            display: inline-block; background-color: var(--accent-color); color: #fff;
+            padding: 18px 40px; border-radius: 30px; text-decoration: none;
+            font-weight: 500; font-size: 1.1rem; margin-top: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(184,93,25,0.3);
         }
+        .btn-whatsapp:hover { background-color: var(--text-color); transform: translateY(-3px); }
 
-        .btn-whatsapp:hover {
-            background-color: var(--text-color);
-            transform: translateY(-3px);
-        }
-
-        /* ================================================
-           CONTADOR REGRESIVO
-        ================================================ */
+        /* ── CONTADOR REGRESIVO ── */
         .countdown-wrapper {
-            position: relative;
-            z-index: 2;
-            margin-top: 28px;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
+            position: relative; z-index: 2; margin-top: 28px;
+            display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
         }
-
         .countdown-item {
-            background: rgba(247, 244, 238, 0.82);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(184, 93, 25, 0.25);
-            border-radius: 12px;
-            padding: 14px 20px;
-            min-width: 72px;
-            text-align: center;
+            background: rgba(247,244,238,0.82); backdrop-filter: blur(6px);
+            border: 1px solid rgba(184,93,25,0.25); border-radius: 12px;
+            padding: 14px 20px; min-width: 72px; text-align: center;
         }
+        .countdown-num { font-family: var(--font-title); font-size: 2.4rem; font-weight: 600; color: var(--accent-color); line-height: 1; display: block; }
+        .countdown-label { font-family: var(--font-text); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-color); opacity: 0.7; margin-top: 4px; display: block; }
 
-        .countdown-num {
-            font-family: var(--font-title);
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            line-height: 1;
-            display: block;
-        }
-
-        .countdown-label {
-            font-family: var(--font-text);
-            font-size: 0.58rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--text-color);
-            opacity: 0.7;
-            margin-top: 4px;
-            display: block;
-        }
-
-        /* ================================================
-           REPRODUCTOR DE MÚSICA
-        ================================================ */
+        /* ── REPRODUCTOR ── */
         #music-player {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(247, 244, 238, 0.96);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(184, 93, 25, 0.2);
-            border-radius: 50px;
-            padding: 10px 18px 10px 10px;
-            box-shadow: 0 4px 24px rgba(74, 53, 37, 0.15);
+            position: fixed; bottom: 24px; right: 24px; z-index: 999;
+            display: flex; align-items: center; gap: 12px;
+            background: rgba(247,244,238,0.96); backdrop-filter: blur(10px);
+            border: 1px solid rgba(184,93,25,0.2); border-radius: 50px;
+            padding: 10px 18px 10px 10px; box-shadow: 0 4px 24px rgba(74,53,37,0.15);
             transition: all 0.3s ease;
         }
-
-        #music-player:hover {
-            box-shadow: 0 6px 32px rgba(74, 53, 37, 0.22);
-        }
-
+        #music-player:hover { box-shadow: 0 6px 32px rgba(74,53,37,0.22); }
         .music-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: var(--accent-color);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: #fff;
-            flex-shrink: 0;
-            transition:
-                background 0.2s,
-                transform 0.15s;
+            width: 42px; height: 42px; border-radius: 50%;
+            background: var(--accent-color); border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; color: #fff; flex-shrink: 0;
+            transition: background 0.2s, transform 0.15s;
         }
+        .music-btn:hover { background: var(--text-color); transform: scale(1.07); }
+        .music-info { display: flex; flex-direction: column; gap: 1px; }
+        .music-title { font-family: var(--font-title); font-size: 0.88rem; font-style: italic; color: var(--text-color); white-space: nowrap; max-width: 160px; overflow: hidden; text-overflow: ellipsis; }
+        .music-sub { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-color); }
+        .music-couple { font-family: var(--font-title); font-style: italic; font-size: .72rem; color: var(--accent-color); letter-spacing: .08em; text-transform: uppercase; }
+        .music-progress-wrap { width: 90px; display: flex; flex-direction: column; gap: 3px; }
+        .music-progress-bar { width: 100%; height: 3px; background: var(--light-accent); border-radius: 2px; cursor: pointer; overflow: hidden; }
+        .music-progress-fill { height: 100%; width: 0%; background: var(--accent-color); border-radius: 2px; transition: width 0.3s linear; pointer-events: none; }
+        .music-time { font-size: 0.58rem; color: #aaa; letter-spacing: 0.05em; text-align: right; }
+        .music-note { position: absolute; top: -6px; left: -4px; font-size: 0.8rem; animation: noteFloat 2.5s ease-in-out infinite; pointer-events: none; }
+        @keyframes noteFloat { 0%,100% { transform: translateY(0) rotate(-10deg); opacity: 0.8; } 50% { transform: translateY(-8px) rotate(10deg); opacity: 1; } }
+        .music-note.paused { animation: none; opacity: 0.4; }
 
-        .music-btn:hover {
-            background: var(--text-color);
-            transform: scale(1.07);
-        }
+        /* ================================================
+           DRESS CODE — diseño fiel a la tarjeta
+        ================================================ */
+        #dress-code { max-width: 860px; padding: 80px 20px; }
 
-        .music-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-        }
 
-        .music-title {
-            font-family: var(--font-title);
-            font-size: 0.88rem;
-            font-style: italic;
-            color: var(--text-color);
-            white-space: nowrap;
-            max-width: 160px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
 
-        .music-sub {
-            font-size: 0.6rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--accent-color);
-        }
+        /* — CABECERA — */
+        .dc-header { position: relative; text-align: center; padding: 44px 20px 24px; background: #f7f4ee; overflow: hidden; }
 
-        .music-couple {
-            font-family: var(--font-title);
-            font-style: italic;
-            font-size: .72rem;
-            color: var(--accent-color);
-            letter-spacing: .08em;
-            text-transform: uppercase;}
-        /* barra de progreso */
-        .music-progress-wrap {
-            width: 90px;
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
+        .dc-header-title { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; letter-spacing: 6px; text-transform: uppercase; color: #6D4C41; margin-bottom: 2px; }
+        
+        .dc-header-hrule { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 6px auto; max-width: 320px; }
+        .dc-header-hrule::before, .dc-header-hrule::after { content: ''; flex: 1; height: 1px; background: #c4a898; }
+        .dc-header-heart { color: #B8734A; font-size: 0.7rem; }
+        .dc-monogram { font-family: 'Cormorant Garamond', serif; font-weight: 5; letter-spacing: 2px; font-style: normal; font-size: 6.5rem; color: #B8734A; line-height: 1; margin: 8px 0 2px; }
+        .dc-header-date  { font-family: 'Cormorant Garamond', serif; font-size: 3rem; letter-spacing: 8px; color: #6D4C41; margin-top: 4px; }
+       .dc-color-note{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #B8745A;
+    margin-top: 12px;
+    opacity: 0.95;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
 
-        .music-progress-bar {
-            width: 100%;
-            height: 3px;
-            background: var(--light-accent);
-            border-radius: 2px;
-            cursor: pointer;
-            overflow: hidden;
-        }
+.color-circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.13);
+    vertical-align: middle;
+}
 
-        .music-progress-fill {
-            height: 100%;
-            width: 0%;
-            background: var(--accent-color);
-            border-radius: 2px;
-            transition: width 0.3s linear;
-            pointer-events: none;
-        }
+.color-circle.white{
+    background: #ffffff;
+}
 
-        .music-time {
-            font-size: 0.58rem;
-            color: #aaa;
-            letter-spacing: 0.05em;
-            text-align: right;
-        }
+.color-circle.champagne{
+    background: #dbc9b6;
+}
 
-        /* nota flotante animada */
-        .music-note {
-            position: absolute;
-            top: -6px;
-            left: -4px;
-            font-size: 0.8rem;
-            animation: noteFloat 2.5s ease-in-out infinite;
-            pointer-events: none;
-        }
+        /* — PALETA 12 COLORES — */
+        .dc-paleta-titulo { font-family: 'Montserrat', sans-serif; font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; color: #6D4C41; text-align: center; padding: 24px 20px 14px; background: #f7f4ee; }
+        .dc-paleta-row { display: grid; grid-template-columns: repeat(6, 1fr);justify-content: center;  align-items: start; gap: 28px; padding: 10 20px 35px; background: #f7f4ee; }
+        .dc-p-item { display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 54px; }
+        .dc-p-swatch { width: 48px; height: 48px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.13); }
+        .dc-p-name { font-family: 'Montserrat', sans-serif; font-size: 0.80rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.3px; color: #6D4C41; text-align: center; line-height: 1.3; }
+        .dc-p-hex  { font-size: 0.56rem; color: #B8734A; font-family: monospace; }
 
-        @keyframes noteFloat {
 
-            0%,
-            100% {
-                transform: translateY(0) rotate(-10deg);
-                opacity: 0.8;
-            }
 
-            50% {
-                transform: translateY(-8px) rotate(10deg);
-                opacity: 1;
-            }
-        }
+        /* — DRESS CODE BOTTOM — */
+        .dc-bottom { display: flex; background: #f7f4ee; border-top: 1px solid #e2cfc5; min-height: 380px; }
+        .dc-col { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 36px 20px 30px; gap: 9px; text-align: center; }
+        .dc-col-right { border-left: 1px solid #e2cfc5; position: relative; }
 
-        .music-note.paused {
-            animation: none;
-            opacity: 0.4;
-        }
+        .dc-col-label  { font-family: 'Montserrat', sans-serif; font-size: 0.62rem; letter-spacing: 5px; text-transform: uppercase; color: #746059; }
+        .dc-col-nombre { font-family: 'Great Vibes', cursive; font-size: 3rem; color: #6e554a; line-height: 1; }
+        .dc-col-heart  { color: #977057; font-size: 0.75rem; }
+        .dc-col-prenda { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #423023; line-height: 2; }
+        .dc-col-desc   { font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #423023; line-height: 1.7; max-width: 190px; }
 
+
+
+        /* divisor central */
+        .dc-center-div { width: 1px; background: #e2cfc5; display: flex; align-items: center; justify-content: center; position: relative; }
+        .dc-center-div span { background: #f7f4ee; padding: 6px 0; color: #a7785b; font-size: 2rem; position: absolute; }
+
+        /* — PIE — */
+        .dc-pie { background: #f7f4ee; border-top: 1px solid #e2cfc5; padding: 22px 20px 20px; }
+        .dc-pie-frase { font-family: 'Great Vibes', cursive; font-size: 3rem; color: #B8734A; text-align: center; display: block; }
+        .dc-pie-heart { text-align: center; color: #a7785b; font-size: 2rem; margin-top: 7px; }
+
+        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            #inicio h1 {
-                font-size: 3rem;
-            }
-
-            #inicio h2 {
-                font-size: 1.8rem;
-                letter-spacing: 2px;
-            }
-
-            nav {
-                padding: 10px 0;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav a {
-                margin: 5px 10px;
-            }
-
-            .programa-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .galeria-pareja img {
-                max-width: 100%;
-            }
-
-            .carousel-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-
-            #music-player {
-                bottom: 14px;
-                right: 14px;
-                padding: 8px 14px 8px 8px;
-            }
-
-            .music-progress-wrap {
-                display: none;
-            }
-
-            .music-title {
-                max-width: 120px;
-            }
+            #inicio h1 { font-size: 3rem; }
+            #inicio h2 { font-size: 1.8rem; letter-spacing: 2px; }
+            nav { padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px 10px; }
+            .programa-container { flex-direction: column; gap: 20px; }
+            .galeria-pareja img { max-width: 100%; }
+            #music-player { bottom: 14px; right: 14px; padding: 8px 14px 8px 8px; }
+            .music-progress-wrap { display: none; }
+            .music-title { max-width: 120px; }
+            /* dress code responsive */
+            .dc-flor-left, .dc-flor-right { width: 110px; }
+            .dc-monogram { font-size: 3.8rem; }
+            .dc-bottom { flex-direction: column; }
+            .dc-col-right { border-left: none; border-top: 1px solid #e2cfc5; }
+            .dc-mini-col { position: static; transform: none; flex-direction: row; justify-content: center; }
+            .dc-center-div { display: none; }
+            .dc-fotos-strip { height: 140px; }
         }
     </style>
 </head>
-
 <body>
+
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#historia">Nuestra Historia</a>
@@ -704,9 +443,8 @@
         <a href="#rsvp">Asistencia</a>
     </nav>
 
-    <!-- CARRUSEL: 23 slides -->
+    <!-- CARRUSEL -->
     <section id="inicio">
-        <!-- Fondo: slides del carrusel -->
         <div class="carousel-track">
             <div class="carousel-slide slide-1 active"></div>
             <div class="carousel-slide slide-2"></div>
@@ -743,63 +481,35 @@
         </div>
 
         <div class="hero-content">
-            <h2 style="font-size: 3rem; font-weight: 700; letter-spacing: 4px;">¡NOS CASAMOS!</h2>
+            <h2 style="font-size:3rem;font-weight:700;letter-spacing:4px;">¡NOS CASAMOS!</h2>
             <h1>Andres & Katherine</h1>
             <div class="divider"></div>
-            <p class="fecha-lugar">
-                7 de Agosto de 2026<br />Santa Marta, Colombia
-            </p>
-
-            <!-- CONTADOR REGRESIVO -->
+            <p class="fecha-lugar">7 de Agosto de 2026<br/>Santa Marta, Colombia</p>
             <div class="countdown-wrapper">
-                <div class="countdown-item">
-                    <span class="countdown-num" id="cd-d">--</span>
-                    <span class="countdown-label">Días</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-num" id="cd-h">--</span>
-                    <span class="countdown-label">Horas</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-num" id="cd-m">--</span>
-                    <span class="countdown-label">Minutos</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-num" id="cd-s">--</span>
-                    <span class="countdown-label">Segundos</span>
-                </div>
+                <div class="countdown-item"><span class="countdown-num" id="cd-d">--</span><span class="countdown-label">Días</span></div>
+                <div class="countdown-item"><span class="countdown-num" id="cd-h">--</span><span class="countdown-label">Horas</span></div>
+                <div class="countdown-item"><span class="countdown-num" id="cd-m">--</span><span class="countdown-label">Minutos</span></div>
+                <div class="countdown-item"><span class="countdown-num" id="cd-s">--</span><span class="countdown-label">Segundos</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Nuestra Historia -->
+    <!-- NUESTRA HISTORIA -->
     <section id="historia">
         <h2 class="section-title">Nuestra Historia</h2>
         <div class="divider"></div>
         <div class="historia-texto">
-            <p>
-                Somos dos ingenieros que, como si la vida hubiera alineado cada dato a
-                nuestro favor, encontramos una conexión profunda, hecha de los mismos
-                valores, de las mismas ilusiones y de un amor que ha crecido con cada
-                paso. Así, casi sin darnos cuenta, comenzamos a construir no solo una
-                relación, sino un hogar… una familia.
-            </p>
-            <p>
-                Hoy queremos invitarlos a ser parte de este momento tan especial: el
-                inicio de nuestra vida juntos. Frente al mar, donde sellaremos nuestra
-                promesa.
-            </p>
-            <p class="historia-frase">
-                Tú y yo, un futuro, un solo destino… para siempre.
-            </p>
+            <p>Somos dos ingenieros que, como si la vida hubiera alineado cada dato a nuestro favor, encontramos una conexión profunda, hecha de los mismos valores, de las mismas ilusiones y de un amor que ha crecido con cada paso. Así, casi sin darnos cuenta, comenzamos a construir no solo una relación, sino un hogar… una familia.</p>
+            <p>Hoy queremos invitarlos a ser parte de este momento tan especial: el inicio de nuestra vida juntos. Frente al mar, donde sellaremos nuestra promesa.</p>
+            <p class="historia-frase">Tú y yo, un futuro, un solo destino… para siempre.</p>
         </div>
         <div class="galeria-pareja">
             <img src="img/Ingenieros.jpeg" alt="Foto Katherine y Andrés 1">
-            <img src="img/Anillo.JPG"      alt="Foto Katherine y Andrés 2">
+            <img src="img/Anillo.JPG" alt="Foto Katherine y Andrés 2">
         </div>
     </section>
 
-    <!-- Programa -->
+    <!-- PROGRAMA -->
     <section id="programa">
         <h2 class="section-title">El Programa</h2>
         <div class="divider"></div>
@@ -807,126 +517,118 @@
             <div class="columna-programa">
                 <span class="icono-animado">♨️🥂</span>
                 <h3>Jueves, 6 de Agosto</h3>
-                <h4 style="color: var(--accent-color); margin-bottom: 15px">
-                    Pre-Boda
-                </h4>
+                <h4 style="color:var(--accent-color);margin-bottom:15px;">Pre-Boda</h4>
                 <p><strong>18:00 hrs</strong></p>
                 <p>Cóctel rompehielos de bienvenida para ir calentando motores.</p>
-                <p style="margin-top: 10px">
-                    <em>Lugar: [Nombre de la playa o bar]</em>
-                </p>
+                <p style="margin-top:10px;"><em>Lugar: [Nombre de la playa o bar]</em></p>
             </div>
             <div class="columna-programa">
                 <span class="icono-animado">👰🏻‍♀️💍🤵🏻</span>
                 <h3>Viernes, 7 de Agosto</h3>
-                <h4 style="color: var(--accent-color); margin-bottom: 15px">
-                    El Gran Día
-                </h4>
+                <h4 style="color:var(--accent-color);margin-bottom:15px;">El Gran Día</h4>
                 <p><strong>16:00 hrs:</strong> Ceremonia frente al mar.</p>
-                <p>
-                    <strong>17:30 hrs:</strong> Recepción, cena y fiesta bajo las
-                    estrellas.
-                </p>
-                <p style="margin-top: 10px">
-                    <em>Lugar: [Nombre de la locación en Santa Marta]</em>
-                </p>
+                <p><strong>17:30 hrs:</strong> Recepción, cena y fiesta bajo las estrellas.</p>
+                <p style="margin-top:10px;"><em>Lugar: [Nombre de la locación en Santa Marta]</em></p>
             </div>
         </div>
     </section>
 
-    <!-- Dress Code -->
+    <!-- DRESS CODE -->
     <section id="dress-code">
-        <h2 class="section-title">Dress Code</h2>
-        <div class="divider"></div>
-        <p><strong>Estilo: Boho Beach / Formal de Playa</strong></p>
-        <p>
-            Queremos que todos se sientan cómodos y frescos. Les sugerimos esta
-            paleta de colores para mantener la armonía visual con el entorno
-            caribeño y nuestra celebración.
-        </p>
-        <p style="font-size: 0.9rem; margin-top: 10px">
-            <em>*Por favor, reservar el color blanco exclusivamente para la
-                novia.</em>
-        </p>
-        <div class="genero-dresscode">
-            <h4>Mujeres</h4>
-            <p style="margin-bottom: 20px">
-                Vestidos fluidos, telas ligeras. Sugerimos tonos cálidos y tierra:
-            </p>
-            <div class="paleta-colores">
-                <div class="color-item">
-                    <div class="color-swatch c-terracota"></div>
-                    <span class="nombre-color">Terracota</span>
-                </div>
-                <div class="color-item">
-                    <div class="color-swatch c-mostaza"></div>
-                    <span class="nombre-color">Mostaza</span>
-                </div>
-                <div class="color-item">
-                    <div class="color-swatch c-olivo"></div>
-                    <span class="nombre-color">V. Olivo</span>
-                </div>
-                <div class="color-item">
-                    <div class="color-swatch c-arena"></div>
-                    <span class="nombre-color">Arena</span>
-                </div>
+        
+
+            <!-- CABECERA -->
+            <div class="dc-header">
+
+             
+                 <h2 class="section-title">Dress code</h2>
+                
+                <div class="dc-header-hrule"><span class="dc-header-heart">♥</span></div>
+                <div class="dc-monogram">A & K</div>
+                <p class="dc-header-date">07 . 08 . 2026</p>
+                <p class="dc-color-note">
+    Agradecemos evitar el color blanco 
+    <span class="color-circle white"></span> 
+    y los tonos champagne 
+    <span class="color-circle champagne"></span> 
+     que son reservados exclusivamente para la novia 🤎
+</p>
             </div>
-        </div>
-        <div class="genero-dresscode">
-            <h4>Hombres</h4>
-            <p style="margin-bottom: 20px">
-                Trajes de lino o algodón para acompañar el traje tono piedra del
-                novio. Sugerimos:
-            </p>
-            <div class="paleta-colores">
-                <div class="color-item">
-                    <div class="color-swatch c-chocolate"></div>
-                    <span class="nombre-color">Chocolate</span>
-                </div>
-                <div class="color-item">
-                    <div class="color-swatch c-canela"></div>
-                    <span class="nombre-color">Canela</span>
-                </div>
-                <div class="color-item">
-                    <div class="color-swatch c-beige"></div>
-                    <span class="nombre-color">Beige</span>
-                </div>
-                <div class="color-item">
-                    <div class="color-swatch c-piedra"></div>
-                    <span class="nombre-color">Piedra</span>
-                </div>
+
+            <!-- PALETA 12 COLORES -->
+            <p class="dc-paleta-titulo">Paleta de Colores</p>
+            <div class="dc-paleta-row">
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#F3DED3"></div><span class="dc-p-name">Marfil</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#E7C1AA"></div><span class="dc-p-name">Durazno Claro</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#D9B5BA"></div><span class="dc-p-name">Rosa Empolvado</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#B98C8E"></div><span class="dc-p-name">Rosa Antiguo</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#A49AA6"></div><span class="dc-p-name">Lavanda Grisácea</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#CBBBAE"></div><span class="dc-p-name">Greige Claro</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#C79C6A"></div><span class="dc-p-name">Caramelo Suave</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#C7624A"></div><span class="dc-p-name">Terracota</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#B8734A"></div><span class="dc-p-name">Canela</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#6D4C41"></div><span class="dc-p-name">Chocolate</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#8B6E63"></div><span class="dc-p-name">Marrón Topo</span></div>
+                <div class="dc-p-item"><div class="dc-p-swatch" style="background:#6E5A5A"></div><span class="dc-p-name">Malva Profundo</span></div>
             </div>
-        </div>
+
+            <!-- DRESS CODE MUJERES / HOMBRES -->
+            <div class="dc-bottom">
+
+                <!-- MUJERES -->
+                <div class="dc-col">
+                    <span class="dc-col-label">Dress Code</span>
+                    <span class="dc-col-nombre">Mujeres</span>
+                    <span class="dc-col-heart">♥</span>
+                    <!-- Silueta mujer -->
+                    <img src="img/siluetamujer.jpg" alt="Silueta mujer vestido largo"
+                    style="height:168px; width:auto; object-fit:contain;">
+                    <p class="dc-col-prenda">Vestido Largo</p>
+                    <p class="dc-col-desc">Te agradecemos elegir un vestido largo.</p>
+                </div>
+
+                <!-- Divisor central -->
+                <div class="dc-center-div"><span></span></div>
+
+                <!-- HOMBRES -->
+                <div class="dc-col dc-col-right">
+                    <span class="dc-col-label">Dress Code</span>
+                    <span class="dc-col-nombre">Hombres</span>
+                    <span class="dc-col-heart">♥</span>
+                    <!-- Silueta hombre -->
+                    <img src="img/siluetahombre.jpg" alt="Silueta mujer vestido largo"
+                    style="height:168px; width:auto; object-fit:contain;">
+                    <p class="dc-col-prenda">Camisa Lino Blanca<br>+<br>Pantalón en la Gama de Colores</p>
+                    <!-- Mini paleta lateral -->
+
+                </div>
+
+            </div>
+
+            <!-- PIE -->
+            <div class="dc-pie">
+                <span class="dc-pie-frase">Gracias por ser parte de este capítulo tan especial.</span>
+                <p class="dc-pie-heart">♥</p>
+            </div>
+
+       
     </section>
 
     <!-- RSVP -->
     <section id="rsvp">
         <h2 class="section-title">Confirma tu Asistencia</h2>
         <div class="divider"></div>
-        <p>
-            Las invitaciones oficiales estarán llegando pronto, pero por ahora tu
-            presencia es nuestro mejor regalo. Por favor, ayúdanos a planear mejor
-            confirmando tu asistencia.
-        </p>
-        <a href="https://wa.me/573222176492?text=¡Hola!%20Qué%20emoción,%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Katherine%20y%20Andrés.%20Mi%20nombre%20es:%20"
-            class="btn-whatsapp" target="_blank">
+        <p>Las invitaciones oficiales estarán llegando pronto, pero por ahora tu presencia es nuestro mejor regalo. Por favor, ayúdanos a planear mejor confirmando tu asistencia.</p>
+        <a href="https://wa.me/573222176492?text=¡Hola!%20Qué%20emoción,%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Katherine%20y%20Andrés.%20Mi%20nombre%20es:%20" class="btn-whatsapp" target="_blank">
             Confirmar por WhatsApp
         </a>
     </section>
 
-    <!-- ================================================
-         REPRODUCTOR DE MÚSICA FLOTANTE
-         ✏️ Cambia el src del audio por tu canción:
-            - Sube el mp3 a tu carpeta: src="img/cancion.mp3"
-            - O usa un enlace directo a un mp3
-    ================================================ -->
+    <!-- REPRODUCTOR -->
     <div id="music-player">
         <span class="music-note" id="music-note">🎵</span>
-        <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Reproducir / Pausar">
-            ▶
-        </button>
+        <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Reproducir / Pausar">▶</button>
         <div class="music-info">
-            <!-- ✏️ Cambia el nombre de tu canción -->
             <span class="music-title" id="music-title">Esta Noche</span>
             <span class="music-sub">Mike Bahía ft. Greeicy</span>
             <span class="music-couple">Andres &amp; Katherine</span>
@@ -939,14 +641,10 @@
         </div>
     </div>
 
-    <!-- ✏️ CAMBIA src POR TU ARCHIVO DE MÚSICA -->
     <audio id="bg-audio" loop>
-        <source src="img/Mike Bahía ft. Greeicy - Esta Noche (Letra).mp3" type="audio/mpeg" />
+        <source src="img/Mike Bahía ft. Greeicy - Esta Noche (Letra).mp3" type="audio/mpeg"/>
     </audio>
 
-    <!-- ================================================
-         JAVASCRIPT
-    ================================================ -->
     <script>
         /* ── CARRUSEL + MÚSICA — arrancan con el primer clic/scroll ── */
         const slides     = document.querySelectorAll(".carousel-slide");
@@ -1029,23 +727,15 @@
 
         /* ── BOTÓN PAUSAR / REANUDAR ── */
         function toggleMusic() {
-            if (playing) {
-                audio.pause();
-                btn.textContent = "▶";
-                note.classList.add("paused");
-            } else {
-                audio.play();
-                btn.textContent = "⏸";
-                note.classList.remove("paused");
-            }
+            if (playing) { audio.pause(); btn.textContent="▶"; note.classList.add("paused"); }
+            else { audio.play(); btn.textContent="⏸"; note.classList.remove("paused"); }
             playing = !playing;
         }
 
         /* ── BARRA DE PROGRESO ── */
         audio.addEventListener("timeupdate", () => {
             if (!audio.duration) return;
-            const pct = (audio.currentTime / audio.duration) * 100;
-            fill.style.width = pct + "%";
+            fill.style.width = (audio.currentTime / audio.duration * 100) + "%";
             const m = Math.floor(audio.currentTime / 60);
             const s = Math.floor(audio.currentTime % 60).toString().padStart(2, "0");
             timeLabel.textContent = m + ":" + s;
@@ -1058,6 +748,6 @@
         }
 
     </script>
-</body>
 
+</body>
 </html>
