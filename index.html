@@ -119,21 +119,31 @@
           Puedes usar rutas relativas como: url('img/foto1.jpg')
           o URLs externas. Añade o quita slides según necesites.
         */
-        .slide-1 {
-            background-image: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
-        }
+        /* ── 23 slides ── */
+        .slide-1  { background-image: url('img/foto1.jpeg'); }
+        /*.slide-2  { background-image: url('img/foto2.jpeg'); }*/
+        .slide-3  { background-image: url('img/foto3.jpeg'); }
+        .slide-4  { background-image: url('img/foto4.jpeg'); }
+        .slide-5  { background-image: url('img/foto5.jpeg'); }
+        .slide-6  { background-image: url('img/foto6.jpeg'); }
+        .slide-7  { background-image: url('img/foto7.jpeg'); }
+        .slide-8  { background-image: url('img/foto8.jpeg'); }
+        .slide-9  { background-image: url('img/foto9.jpeg'); }
+        .slide-10 { background-image: url('img/foto10.jpeg'); }
+        .slide-11 { background-image: url('img/foto11.jpeg'); }
+        .slide-12 { background-image: url('img/foto12.jpeg'); }
+        .slide-13 { background-image: url('img/foto13.jpeg'); }
+        .slide-14 { background-image: url('img/foto14.jpeg'); }
+        .slide-15 { background-image: url('img/foto15.jpeg'); }
+        .slide-16 { background-image: url('img/foto16.jpeg'); }
+        .slide-17 { background-image: url('img/foto17.jpeg'); }
+        .slide-18 { background-image: url('img/foto18.jpeg'); }
+        .slide-19 { background-image: url('img/foto19.jpeg'); }
+        .slide-20 { background-image: url('img/foto20.jpeg'); }
+        .slide-21 { background-image: url('img/foto21.jpeg'); }
+        .slide-22 { background-image: url('img/foto22.jpeg'); }
+        .slide-23 { background-image: url('img/foto23.jpeg'); }
 
-        .slide-2 {
-            background-image: url("https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
-        }
-
-        .slide-3 {
-            background-image: url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
-        }
-
-        .slide-4 {
-            background-image: url("https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
-        }
 
         /* Contenido del Hero (sobre el carrusel) */
         .hero-content {
@@ -200,17 +210,20 @@
         .galeria-pareja {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 24px;
             margin-top: 40px;
             flex-wrap: wrap;
+            align-items: flex-start;
         }
 
         .galeria-pareja img {
             width: 100%;
-            max-width: 350px;
+            max-width: 340px;
+            height: 350px;            /* altura automática = foto completa */
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            object-fit: contain;     /* nunca recorta */
+            background-color: #ede8e0;
             border: 5px solid #fff;
             transform: rotate(-2deg);
             transition: transform 0.3s;
@@ -680,10 +693,8 @@
             </p>
         </div>
         <div class="galeria-pareja">
-            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Foto Katherine y Andrés 1" />
-            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Foto Katherine y Andrés 2" />
+            <img src="img/Ingenieros.jpeg" alt="Foto Katherine y Andrés 1">
+            <img src="img/Anillo.JPG"      alt="Foto Katherine y Andrés 2">
         </div>
     </section>
 
