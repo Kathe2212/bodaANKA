@@ -93,24 +93,119 @@
         .carousel-slide {
             position: absolute;
             inset: 0;
-            background-size: cover;
-            background-position: center;
             opacity: 0;
             transition: opacity 1.4s ease-in-out;
+            overflow: hidden;
         }
 
+        /* Fondo difuminado — llena espacios laterales en fotos verticales */
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            filter: blur(18px) brightness(0.55) saturate(0.75);
+            transform: scale(1.1);
+            z-index: 0;
+        }
+
+        /* Foto principal centrada y completa — sin recortar */
         .carousel-slide::after {
-            content: "";
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: inherit;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        /* Gradiente elegante encima del carrusel */
+        .carousel-track::after {
+            content: '';
             position: absolute;
             inset: 0;
             background: linear-gradient(to bottom,
-                    rgba(247, 244, 238, 0.25) 0%,
-                    rgba(247, 244, 238, 0.55) 50%,
-                    rgba(247, 244, 238, 0.85) 100%);
+                rgba(247, 244, 238, 0.10) 0%,
+                rgba(247, 244, 238, 0.40) 60%,
+                rgba(247, 244, 238, 0.88) 100%);
+            z-index: 2;
+            pointer-events: none;
         }
 
         .carousel-slide.active {
             opacity: 1;
+        }
+
+        /* Hint visual — invita al usuario a interactuar */
+        .touch-hint {
+            position: absolute;
+            bottom: 5.5rem;
+            left: 50%;
+            font-family: var(--font-title);
+            font-style: italic;
+            font-size: 1.4rem;
+            color: rgba(74, 53, 37, 0.9);
+            letter-spacing: .18em;
+            z-index: 10;
+            pointer-events: none;
+            white-space: nowrap;
+            text-shadow: 0 1px 12px rgba(247,244,238,0.9);
+            animation: fadeHint 2s ease-in-out infinite;
+            transition: opacity .5s ease;
+        }
+        .touch-hint.hidden {
+            opacity: 0 !important;
+            animation: none !important;
+        }
+        @keyframes fadeHint {
+            0%   { opacity: .5;  transform: translateX(-50%) scale(1);    }
+            50%  { opacity: 1;   transform: translateX(-50%) scale(1.12); }
+            100% { opacity: .5;  transform: translateX(-50%) scale(1);    }
+        }
+
+        /* ── FLECHA DE SCROLL ── */
+        .scroll-arrow {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .35rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .8s ease;
+        }
+        .scroll-arrow.visible { opacity: 1; }
+        .scroll-arrow.hidden  { opacity: 0; }
+        .scroll-arrow span {
+            font-family: var(--font-title);
+            font-style: italic;
+            font-size: 1.4rem;
+            letter-spacing: .18em;
+            color: rgba(74, 53, 37, 0.9);
+            text-shadow: 0 1px 8px rgba(247,244,238,0.85);
+            margin-bottom: .2rem;
+        }
+        .scroll-arrow .chevron {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid rgba(74, 53, 37, 0.45);
+            border-bottom: 2px solid rgba(74, 53, 37, 0.45);
+            transform: rotate(45deg);
+            animation: arrowBounce 1.4s ease-in-out infinite;
+        }
+        .scroll-arrow .chevron:nth-child(3) { animation-delay: .2s; }
+        .scroll-arrow .chevron:nth-child(4) { animation-delay: .4s; }
+        @keyframes arrowBounce {
+            0%, 100% { opacity: .25; transform: rotate(45deg) translateY(0);   }
+            50%       { opacity: .9;  transform: rotate(45deg) translateY(5px); }
         }
 
         /* 
@@ -120,9 +215,8 @@
           o URLs externas. Añade o quita slides según necesites.
         */
         /* ── 23 slides ── */
-        .slide-1  { background-image: url('img/foto1.jpeg'); }
-        /*.slide-2  { background-image: url('img/foto2.jpeg'); }*/
-        .slide-3  { background-image: url('img/foto3.jpeg'); }
+        .slide-1  { background-image: url('img/Arrodillada.JPG'); }
+        .slide-2  { background-image: url('img/foto1.jpeg'); }
         .slide-4  { background-image: url('img/foto4.jpeg'); }
         .slide-5  { background-image: url('img/foto5.jpeg'); }
         .slide-6  { background-image: url('img/foto6.jpeg'); }
@@ -137,12 +231,10 @@
         .slide-15 { background-image: url('img/foto15.jpeg'); }
         .slide-16 { background-image: url('img/foto16.jpeg'); }
         .slide-17 { background-image: url('img/foto17.jpeg'); }
-        .slide-18 { background-image: url('img/foto18.jpeg'); }
         .slide-19 { background-image: url('img/foto19.jpeg'); }
         .slide-20 { background-image: url('img/foto20.jpeg'); }
-        .slide-21 { background-image: url('img/foto21.jpeg'); }
-        .slide-22 { background-image: url('img/foto22.jpeg'); }
-        .slide-23 { background-image: url('img/foto23.jpeg'); }
+        .slide-21 { background-image: url('img/foto23.jpeg'); }
+        .slide-22 { background-image: url('img/Beso.png'); }
 
 
         /* Contenido del Hero (sobre el carrusel) */
@@ -641,6 +733,15 @@
             <div class="carousel-slide slide-23"></div>
         </div>
 
+        <!-- Hint: desaparece al primer clic -->
+        <div class="touch-hint" id="touch-hint">▶ &nbsp;Toca para comenzar</div>
+
+        <!-- Flecha scroll — aparece tras el primer clic -->
+        <div class="scroll-arrow" id="scroll-arrow">
+            <span>Desliza para descubrir más</span>
+            <div class="chevron"></div>
+        </div>
+
         <div class="hero-content">
             <h2 style="font-size: 3rem; font-weight: 700; letter-spacing: 4px;">¡NOS CASAMOS!</h2>
             <h1>Andres & Katherine</h1>
@@ -847,86 +948,86 @@
          JAVASCRIPT
     ================================================ -->
     <script>
-        /* ── CARRUSEL ── */
-        const slides = document.querySelectorAll(".carousel-slide");
-        let current = 0;
-        const INTERVAL = 5000;
-        function next() {
+        /* ── CARRUSEL + MÚSICA — arrancan con el primer clic/scroll ── */
+        const slides     = document.querySelectorAll(".carousel-slide");
+        const audio      = document.getElementById("bg-audio");
+        const btn        = document.getElementById("music-btn");
+        const note       = document.getElementById("music-note");
+        const fill       = document.getElementById("progress-fill");
+        const timeLabel  = document.getElementById("music-time");
+        const hint       = document.getElementById("touch-hint");
+        let   current    = 0;
+        let   playing    = false;
+        let   carStarted = false;
+        const INTERVAL   = 5000;
+
+        function nextSlide() {
             slides[current].classList.remove("active");
             current = (current + 1) % slides.length;
             slides[current].classList.add("active");
         }
-        setInterval(next, INTERVAL);
 
-        /* ── CUENTA REGRESIVA ──
-             ✏️ Cambia la fecha si cambia el día */
+        function unlockExperience() {
+            if (carStarted) return;
+            carStarted = true;
+
+            // Oculta el hint
+            if (hint) hint.classList.add("hidden");
+
+            // Muestra la flecha de scroll
+            const arrow = document.getElementById("scroll-arrow");
+            if (arrow) setTimeout(() => arrow.classList.add("visible"), 600);
+
+            // Arranca carrusel
+            setInterval(nextSlide, INTERVAL);
+
+            // Arranca música
+            audio.volume = 0.5;
+            audio.play().then(() => {
+                playing = true;
+                btn.textContent = "⏸";
+                note.classList.remove("paused");
+            }).catch(() => {
+                btn.textContent = "▶";
+                note.classList.add("paused");
+            });
+
+            document.removeEventListener("click",      unlockExperience);
+            document.removeEventListener("touchstart", unlockExperience);
+            document.removeEventListener("scroll",     unlockExperience);
+        }
+
+        document.addEventListener("click",      unlockExperience);
+        document.addEventListener("touchstart", unlockExperience);
+        document.addEventListener("scroll",     unlockExperience);
+
+        // Oculta la flecha al hacer scroll
+        window.addEventListener("scroll", () => {
+            const arrow = document.getElementById("scroll-arrow");
+            if (arrow && window.scrollY > 80) arrow.classList.remove("visible");
+        }, { passive: true });
+
+        /* ── CUENTA REGRESIVA ── */
         const weddingDate = new Date("2026-08-07T16:00:00");
         function updateCountdown() {
-            const now = new Date();
+            const now  = new Date();
             const diff = weddingDate - now;
             if (diff <= 0) {
-                ["cd-d", "cd-h", "cd-m", "cd-s"].forEach(
-                    (id) => (document.getElementById(id).textContent = "00"),
+                ["cd-d","cd-h","cd-m","cd-s"].forEach(
+                    id => document.getElementById(id).textContent = "00"
                 );
                 return;
             }
-            const pad = (n) => String(Math.floor(n)).padStart(2, "0");
+            const pad = n => String(Math.floor(n)).padStart(2, "0");
             document.getElementById("cd-d").textContent = pad(diff / 86400000);
-            document.getElementById("cd-h").textContent = pad(
-                (diff % 86400000) / 3600000,
-            );
-            document.getElementById("cd-m").textContent = pad(
-                (diff % 3600000) / 60000,
-            );
-            document.getElementById("cd-s").textContent = pad(
-                (diff % 60000) / 1000,
-            );
+            document.getElementById("cd-h").textContent = pad((diff % 86400000) / 3600000);
+            document.getElementById("cd-m").textContent = pad((diff % 3600000)  / 60000);
+            document.getElementById("cd-s").textContent = pad((diff % 60000)    / 1000);
         }
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
-        /* ── REPRODUCTOR ── */
-        const audio = document.getElementById("bg-audio");
-        const btn = document.getElementById("music-btn");
-        const note = document.getElementById("music-note");
-        const fill = document.getElementById("progress-fill");
-        const timeLabel = document.getElementById("music-time");
-        const titleEl = document.getElementById("music-title");
-        let playing = false;
-
-        const unlockAudio = () => {
-            if (!playing) {
-                audio
-                    .play()
-                    .then(() => {
-                        playing = true;
-                        btn.textContent = "⏸";
-                        note.classList.remove("paused");
-                    })
-                    .catch(() => { });
-            }
-            document.removeEventListener("click", unlockAudio);
-            document.removeEventListener("touchstart", unlockAudio);
-        };
-        document.addEventListener("click", unlockAudio);
-        document.addEventListener("touchstart", unlockAudio);
-
-        /* Intenta autoplay al cargar */
-        window.addEventListener("load", () => {
-            audio.volume = 0.5;
-            audio
-                .play()
-                .then(() => {
-                    playing = true;
-                    btn.textContent = "⏸";
-                    note.classList.remove("paused");
-                })
-                .catch(() => {
-                    btn.textContent = "▶";
-                    note.classList.add("paused");
-                });
-        });
-
+        /* ── BOTÓN PAUSAR / REANUDAR ── */
         function toggleMusic() {
             if (playing) {
                 audio.pause();
@@ -940,26 +1041,21 @@
             playing = !playing;
         }
 
-        /* Barra de progreso */
+        /* ── BARRA DE PROGRESO ── */
         audio.addEventListener("timeupdate", () => {
             if (!audio.duration) return;
             const pct = (audio.currentTime / audio.duration) * 100;
             fill.style.width = pct + "%";
             const m = Math.floor(audio.currentTime / 60);
-            const s = Math.floor(audio.currentTime % 60)
-                .toString()
-                .padStart(2, "0");
+            const s = Math.floor(audio.currentTime % 60).toString().padStart(2, "0");
             timeLabel.textContent = m + ":" + s;
         });
 
-        /* Clic en la barra para adelantar */
         function seekMusic(e) {
-            const bar = document.getElementById("progress-bar");
+            const bar  = document.getElementById("progress-bar");
             const rect = bar.getBoundingClientRect();
-            const pct = (e.clientX - rect.left) / rect.width;
-            audio.currentTime = pct * audio.duration;
+            audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
         }
-
 
     </script>
 </body>
