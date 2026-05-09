@@ -262,9 +262,10 @@
 
         .galeria-pareja { display: flex; justify-content: center; gap: 24px; margin-top: 40px; flex-wrap: wrap; align-items: flex-start; }
         .galeria-pareja img {
-            width: 100%; max-width: 340px; height: auto;
+            width: 340px; height: 420px;
             border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            object-fit: contain; background-color: #ede8e0;
+            object-fit: cover; object-position: center top;
+            background-color: #ede8e0;
             border: 5px solid #fff; transform: rotate(-2deg); transition: transform 0.3s;
         }
         .galeria-pareja img:nth-child(even) { transform: rotate(2deg); }
@@ -422,7 +423,7 @@
             nav { padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; }
             nav a { margin: 5px 10px; }
             .programa-container { flex-direction: column; gap: 20px; }
-            .galeria-pareja img { max-width: 100%; }
+            .galeria-pareja img { max-width: 100px; }
             #music-player { bottom: 14px; right: 14px; padding: 8px 14px 8px 8px; }
             .music-progress-wrap { display: none; }
             .music-title { max-width: 120px; }
