@@ -386,8 +386,8 @@
 
         /* — PALETA 12 COLORES — */
         .dc-paleta-titulo { font-family: 'Montserrat', sans-serif; font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; color: #6D4C41; text-align: center; padding: 24px 20px 14px; background: #f7f4ee; }
-        .dc-paleta-row { display: grid; grid-template-columns: repeat(6, 1fr);justify-content: center;  align-items: start; gap: 28px; padding: 10 20px 35px; background: #f7f4ee; }
-        .dc-p-item { display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 54px; }
+        .dc-paleta-row { display: grid; grid-template-columns: repeat(6, 1fr); justify-content: center; align-items: start; gap: 16px; padding: 10px 20px 35px; background: #f7f4ee; }
+        .dc-p-item { display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 0; }
         .dc-p-swatch { width: 48px; height: 48px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.13); }
         .dc-p-name { font-family: 'Montserrat', sans-serif; font-size: 0.80rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.3px; color: #6D4C41; text-align: center; line-height: 1.3; }
         .dc-p-hex  { font-size: 0.56rem; color: #B8734A; font-family: monospace; }
@@ -423,7 +423,8 @@
             nav { padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; }
             nav a { margin: 5px 10px; }
             .programa-container { flex-direction: column; gap: 20px; }
-            .galeria-pareja img { max-width: 100px; }
+            .galeria-pareja { flex-direction: column; align-items: center; gap: 20px; }
+            .galeria-pareja img { width: 90vw; max-width: 360px; height: 300px; transform: rotate(0deg) !important; }
             #music-player { bottom: 14px; right: 14px; padding: 8px 14px 8px 8px; }
             .music-progress-wrap { display: none; }
             .music-title { max-width: 120px; }
@@ -435,6 +436,10 @@
             .dc-mini-col { position: static; transform: none; flex-direction: row; justify-content: center; }
             .dc-center-div { display: none; }
             .dc-fotos-strip { height: 140px; }
+            /* Paleta colores móvil — 4 columnas */
+            .dc-paleta-row { grid-template-columns: repeat(4, 1fr) !important; gap: 10px !important; padding: 10px 12px 24px !important; }
+            .dc-p-swatch { width: 36px !important; height: 36px !important; }
+            .dc-p-name { font-size: 0.55rem !important; letter-spacing: 0 !important; }
         }
     </style>
 </head>
@@ -518,7 +523,7 @@
         <!-- Mensaje central Programa -->
         <p style="
             font-family: var(--font-title);
-            font-size: 1.15rem;
+            font-size: 1.5rem;
             font-style: italic;
             color: var(--accent-color);
             text-align: center;
