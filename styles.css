@@ -16,7 +16,7 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 600; }
+        
 
         nav {
             position: fixed;
@@ -42,7 +42,7 @@
         nav a:hover { color: var(--accent-color); }
 
         section {
-            padding: 80px 20px;
+            padding: 20px 20px;
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
@@ -114,8 +114,9 @@
         /* Hint visual — invita al usuario a interactuar */
         .touch-hint {
             position: absolute;
-            bottom: 5.5rem;
+            bottom: 2rem;
             left: 50%;
+            transform: translateX(-50%);
             font-family: var(--font-title);
             font-style: italic;
             font-size: 1.4rem;
@@ -141,7 +142,7 @@
         /* ── FLECHA DE SCROLL ── */
         .scroll-arrow {
             position: absolute;
-            bottom: 2rem;
+            bottom: 1rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
@@ -215,15 +216,15 @@
             align-items: center;
             padding-top: 20px;
             text-shadow:
-                0 0 6px rgba(255,255,255,0.95),
-                0 0 14px rgba(255,255,255,0.75),
-                0 0 24px rgba(255,255,255,0.45);
+                0 0 8px rgba(255,255,255,1),
+                0 0 20px rgba(255,255,255,0.95),
+                0 0 40px rgba(255,255,255,0.8),
+                0 0 60px rgba(255,255,255,0.5);
         }
 
-        #inicio h1 { font-size: 6rem; margin-bottom: 10px; color: var(--text-color); }
-        #inicio h2 { font-size: 4.5rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 20px; }
+        #inicio h1 { font-size: 3.5rem; margin-bottom: 10px; color: var(--text-color); }
+        #inicio h2 { font-size: 2.5rem; font-weight: 600; letter-spacing: 3px; margin-bottom: 20px; }
 
-        .fecha-lugar { /* contenedor principal */ }
 
         /* Fecha estilo elegante */
         .fecha-elegante {
@@ -361,7 +362,7 @@
             padding: 14px 20px; min-width: 72px; text-align: center;
         }
         .countdown-num { font-family: var(--font-title); font-size: 2.4rem; font-weight: 600; color: var(--accent-color); line-height: 1; display: block; }
-        .countdown-label { font-family: var(--font-text); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-color); opacity: 0.7; margin-top: 4px; display: block; }
+        .countdown-label { font-family: var(--font-text); font-size: 0.58rem; letter-spacing: 0em; text-transform: uppercase; color: var(--text-color); opacity: 0.7; margin-top: 4px; display: block; }
 
         /* ── REPRODUCTOR ── */
         #music-player {
@@ -396,7 +397,7 @@
         /* ================================================
            DRESS CODE — diseño fiel a la tarjeta
         ================================================ */
-        #dress-code { max-width: 860px; padding: 80px 20px; }
+        #dress-code { max-width: 860px; padding: 10px 20px; }
 
 
 
@@ -478,71 +479,98 @@
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
 
-            /* ── FIX 1: HERO ──
-               El #inicio usa justify-content:center pero la nav fija tapa el contenido.
-               Solución: empujar el hero-content con padding-top igual a la altura de la nav. */
-            #inicio {
-                padding-top: 0;
-                justify-content: center;
-            }
-            .hero-content {
-                width: 100%;
-                padding-top: 80px;   /* compensa la nav fija (~70px) + holgura */
-                padding-bottom: 16px;
-                box-sizing: border-box;
-            }
-
-            .hero-content h2 {
-                font-size: 0.5rem;
-            }
-
-            /* ── FIX 1b: "Toca para comenzar"
-               Estaba en bottom:5.5rem lo que lo montaba sobre el contador.
-               Lo subimos al tope, debajo de la nav. */
-            .touch-hint {
-                bottom: auto;
-                top: 76px;
-                font-size: 1rem;
-            }
-
-            /* ── FIX 1c: Countdown — evitar que "Segundos" se baje a una segunda fila */
-            .countdown-wrapper {
-                flex-wrap: nowrap;
-                gap: 5px;
-            }
-            .countdown-item {
-                padding: 10px 8px;
-                min-width: 0;
-                flex: 1;
-            }
-            .countdown-num  { font-size: 1.3rem; }
-            .countdown-label { font-size: 0.6rem; }
-
-            /* ── FIX 2: HISTORIA — padding para que "destino" no se corte feo */
-            .historia-frase {
-                padding-left: 28px;
-                padding-right: 28px;
-            }
-
-            /* resto de reglas originales */
-            #inicio h1 { font-size: 3rem; }
-            #inicio h2 { font-size: 1.8rem; letter-spacing: 2px; }
-            nav { padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; }
-            nav a { margin: 5px 10px; }
-            .programa-container { flex-direction: column; gap: 20px; }
-            .galeria-pareja { flex-direction: column; align-items: center; gap: 20px; }
-            .galeria-pareja img { width: 90vw; max-width: 360px; height: 300px; transform: rotate(0deg) !important; }
-            #music-player { bottom: 14px; right: 14px; padding: 8px 14px 8px 8px; }
-            .music-progress-wrap { display: none; }
-            .music-title { max-width: 120px; }
-            .dc-flor-left, .dc-flor-right { width: 110px; }
-            .dc-monogram { font-size: 3.8rem; }
-            .dc-bottom { flex-direction: column; }
-            .dc-col-right { border-left: none; border-top: 1px solid #e2cfc5; }
-            .dc-mini-col { position: static; transform: none; flex-direction: row; justify-content: center; }
-            .dc-center-div { display: none; }
-            .dc-fotos-strip { height: 140px; }
-            .dc-paleta-row { grid-template-columns: repeat(4, 1fr) !important; gap: 10px !important; padding: 10px 12px 24px !important; }
-            .dc-p-swatch { width: 36px !important; height: 36px !important; }
-            .dc-p-name { font-size: 0.55rem !important; letter-spacing: 0 !important; }
+    /* ── HERO ── */
+        #inicio {
+            padding-top: 0;
+            justify-content: flex-start;
+            min-height: 0;
+            height: auto;
         }
+        .hero-content {
+            width: 100%;
+            padding-top: 100px;
+            padding-bottom: 8px;
+            box-sizing: border-box;
+                text-shadow:
+                0 0 8px rgba(255,255,255,1),
+                0 0 20px rgba(255,255,255,0.95),
+                0 0 40px rgba(255,255,255,0.8),
+                0 0 60px rgba(255,255,255,0.5);
+        }
+
+        #inicio h1 { font-size: 2.4rem; margin-bottom: 4px; }
+        #inicio h2 { font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 4px; font-weight: 900;}
+
+        .fecha-elegante  { margin-top: 4px; gap: 2px; }
+        .fecha-mes-top   { margin-bottom: 4px; }
+        .fecha-lugar-sub { margin-top: 4px; }
+
+        /* ── COUNTDOWN ── */
+        .countdown-wrapper { flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 6px; }
+        .countdown-item    { padding: 10px 14px; min-width: 100px; flex: none; }
+        .countdown-label   { font-size: 0.52rem; letter-spacing: 0 !important; }
+        .countdown-num     { font-size: 1.8rem; }
+
+        /* ── TOUCH HINT ── */
+        .touch-hint {
+            top: auto;
+            bottom: 3rem;
+            font-size: 1.2rem;
+            transform: translateX(-50%);
+        }
+
+        .scroll-arrow {
+            bottom: 0.2rem;
+        }
+
+        .scroll-arrow span {
+            font-size: 1.3rem;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            margin-bottom: 5px;
+        }
+        /* ── CARRUSEL iOS/Android ── */
+        .carousel-slide::after {
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center top;
+        }
+        .carousel-slide::before {
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        /* ── HISTORIA ── */
+        .historia-frase {
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+
+        /* ── NAV ── */
+        nav { padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; }
+        nav a { margin: 5px 10px; }
+
+        /* ── PROGRAMA ── */
+        .programa-container { flex-direction: column; gap: 20px; }
+
+        /* ── GALERÍA ── */
+        .galeria-pareja { flex-direction: column; align-items: center; gap: 20px; }
+        .galeria-pareja img { width: 90vw; max-width: 360px; height: 300px; transform: rotate(0deg) !important; }
+
+        /* ── REPRODUCTOR ── */
+        #music-player { bottom: 14px; right: 14px; padding: 8px 14px 8px 8px; }
+        .music-progress-wrap { display: none; }
+        .music-title { max-width: 120px; }
+
+        /* ── DRESS CODE ── */
+        .dc-flor-left, .dc-flor-right { width: 110px; }
+        .dc-monogram { font-size: 3.8rem; }
+        .dc-bottom { flex-direction: column; }
+        .dc-col-right { border-left: none; border-top: 1px solid #e2cfc5; }
+        .dc-mini-col { position: static; transform: none; flex-direction: row; justify-content: center; }
+        .dc-center-div { display: none; }
+        .dc-fotos-strip { height: 140px; }
+        .dc-paleta-row { grid-template-columns: repeat(4, 1fr) !important; gap: 10px !important; padding: 10px 12px 24px !important; }
+        .dc-p-swatch { width: 36px !important; height: 36px !important; }
+        .dc-p-name { font-size: 0.55rem !important; letter-spacing: 0 !important; }
+    }

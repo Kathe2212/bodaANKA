@@ -44,12 +44,12 @@
 
             document.removeEventListener("click",      unlockExperience);
             document.removeEventListener("touchstart", unlockExperience);
-            document.removeEventListener("scroll",     unlockExperience);
+            document.removeEventListener("touchend",   unlockExperience);
         }
 
         document.addEventListener("click",      unlockExperience);
         document.addEventListener("touchstart", unlockExperience);
-        document.addEventListener("scroll",     unlockExperience);
+        document.addEventListener("touchend",   unlockExperience);
 
         // Oculta la flecha al hacer scroll
         window.addEventListener("scroll", () => {
