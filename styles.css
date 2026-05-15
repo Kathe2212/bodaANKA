@@ -413,13 +413,12 @@
         .dc-header-date  { font-family: 'Cormorant Garamond', serif; font-size: 3rem; letter-spacing: 8px; color: #6D4C41; margin-top: 4px; }
        .dc-color-note{
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
+    font-size: 0.80rem;
     letter-spacing: 1.5px;
-    text-transform: uppercase;
     color: #B8745A;
     margin-top: 12px;
     opacity: 0.95;
-    font-weight: 700;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -428,8 +427,8 @@
 }
 
 .color-circle{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: inline-block;
     border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.13);
