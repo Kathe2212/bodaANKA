@@ -17,9 +17,24 @@
             slides[current].classList.add("active");
         }
 
-        function unlockExperience() {
+        function unlockExperience(e) {
             if (carStarted) return;
             carStarted = true;
+
+            // Arranca música PRIMERO, directo en el handler del evento
+            audio.volume = 0.2;
+            const playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    playing = true;
+                    btn.textContent = "⏸";
+                    note.classList.remove("paused");
+                }).catch(() => {
+                    btn.textContent = "▶";
+                    note.classList.add("paused");
+                });
+            }
 
             // Oculta el hint
             if (hint) hint.classList.add("hidden");
@@ -31,25 +46,29 @@
             // Arranca carrusel
             setInterval(nextSlide, INTERVAL);
 
-            // Arranca música
-            audio.volume = 0.5;
-            audio.play().then(() => {
-                playing = true;
-                btn.textContent = "⏸";
-                note.classList.remove("paused");
-            }).catch(() => {
-                btn.textContent = "▶";
-                note.classList.add("paused");
-            });
-
-            document.removeEventListener("click",      unlockExperience);
-            document.removeEventListener("touchstart", unlockExperience);
-            document.removeEventListener("touchend",   unlockExperience);
+            document.removeEventListener("click",    unlockExperience);
+            document.removeEventListener("touchend", unlockExperience);
         }
 
-        document.addEventListener("click",      unlockExperience);
-        document.addEventListener("touchstart", unlockExperience);
-        document.addEventListener("touchend",   unlockExperience);
+        /* ── WELCOME SCREEN ── */
+        const welcomeScreen = document.getElementById("welcome-screen");
+        const wsBtn         = document.getElementById("ws-btn");
+
+        wsBtn.addEventListener("click", () => {
+            unlockExperience();
+            welcomeScreen.classList.add("hidden");
+            setTimeout(() => welcomeScreen.style.display = "none", 900);
+        });
+
+        wsBtn.addEventListener("touchend", (e) => {
+            e.preventDefault();
+            unlockExperience();
+            welcomeScreen.classList.add("hidden");
+            setTimeout(() => welcomeScreen.style.display = "none", 900);
+        });
+
+        document.addEventListener("click",    unlockExperience);
+        document.addEventListener("touchend", unlockExperience);
 
         // Oculta la flecha al hacer scroll
         window.addEventListener("scroll", () => {
